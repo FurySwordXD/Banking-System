@@ -1,0 +1,15 @@
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\bin\Debug\BankingDatabase.mdf
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\bin\Debug\BankingDatabase_log.ldf
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\bin\Debug\BankingSystem.exe.config
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\bin\Debug\BankingSystem.exe
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\bin\Debug\BankingSystem.pdb
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\obj\Debug\BankingSystem.csprojResolveAssemblyReference.cache
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\obj\Debug\BankingSystem.Properties.Resources.resources
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\obj\Debug\BankingSystem.csproj.GenerateResource.Cache
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\obj\Debug\BankingSystem.csproj.CoreCompileInputs.cache
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\obj\Debug\BankingSystem.exe
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\obj\Debug\BankingSystem.pdb
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\bin\Debug\Bunifu_UI_v1.5.3.dll
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\obj\Debug\BankingSystem.LoginForm.resources
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\obj\Debug\BankingSystem.GeneralForm.resources
+D:\Programming\VisualStudio\C#\BankingSystem\BankingSystem\BankingSystem\obj\Debug\BankingSystem.AccountForm.resources
