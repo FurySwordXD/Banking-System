@@ -1,0 +1,8 @@
+D:\Programming\VisualStudio\C#\Banking-System\BlockChain\bin\Debug\netcoreapp2.0\BlockChain.deps.json
+D:\Programming\VisualStudio\C#\Banking-System\BlockChain\bin\Debug\netcoreapp2.0\BlockChain.runtimeconfig.json
+D:\Programming\VisualStudio\C#\Banking-System\BlockChain\bin\Debug\netcoreapp2.0\BlockChain.runtimeconfig.dev.json
+D:\Programming\VisualStudio\C#\Banking-System\BlockChain\bin\Debug\netcoreapp2.0\BlockChain.dll
+D:\Programming\VisualStudio\C#\Banking-System\BlockChain\obj\Debug\netcoreapp2.0\BlockChain.csprojResolveAssemblyReference.cache
+D:\Programming\VisualStudio\C#\Banking-System\BlockChain\obj\Debug\netcoreapp2.0\BlockChain.csproj.CoreCompileInputs.cache
+D:\Programming\VisualStudio\C#\Banking-System\BlockChain\obj\Debug\netcoreapp2.0\BlockChain.AssemblyInfoInputs.cache
+D:\Programming\VisualStudio\C#\Banking-System\BlockChain\obj\Debug\netcoreapp2.0\BlockChain.AssemblyInfo.cs
