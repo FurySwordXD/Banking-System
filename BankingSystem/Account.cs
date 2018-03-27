@@ -46,5 +46,21 @@ namespace BankingSystem
         public string Get_Email() { return email; }
         public float Get_Credit() { return credit; }
         public float Get_Debit() { return debit; }
+
+        public bool Pay(string acc_no, float amount)
+        {
+            if (amount <= credit)
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\VisualStudio\C#\Banking-System\BankingSystem\BankingDatabase.mdf;Integrated Security=True");
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Credit from AccountTable where Account_No = " + acc_no, con);
+                cmd.ExecuteNonQuery();
+                cmd = new SqlCommand("INSERT into TransactionsTable(Transaction_Id,Sender_No,Reciever_No,Amount) VALUES('" + "0" + "','" + account_no + "','" + acc_no + "','" + amount + "')";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            return false;
+        }
     }
 }
