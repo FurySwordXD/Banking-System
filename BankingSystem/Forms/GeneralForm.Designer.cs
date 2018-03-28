@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation10 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation9 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneralForm));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.FormHeader = new System.Windows.Forms.Panel();
@@ -40,7 +40,7 @@
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.Logout_Btn = new System.Windows.Forms.Button();
             this.eTax_Btn = new System.Windows.Forms.Button();
-            this.Bills_Btn = new System.Windows.Forms.Button();
+            this.Transactions_Btn = new System.Windows.Forms.Button();
             this.Payments_Btn = new System.Windows.Forms.Button();
             this.Account_Btn = new System.Windows.Forms.Button();
             this.Menu_Btn = new System.Windows.Forms.Button();
@@ -112,7 +112,7 @@
             // 
             this.NavigationPanel.Controls.Add(this.Logout_Btn);
             this.NavigationPanel.Controls.Add(this.eTax_Btn);
-            this.NavigationPanel.Controls.Add(this.Bills_Btn);
+            this.NavigationPanel.Controls.Add(this.Transactions_Btn);
             this.NavigationPanel.Controls.Add(this.Payments_Btn);
             this.NavigationPanel.Controls.Add(this.Account_Btn);
             this.NavigationPanel.Controls.Add(this.Menu_Btn);
@@ -164,25 +164,25 @@
             this.eTax_Btn.UseVisualStyleBackColor = true;
             this.eTax_Btn.Click += new System.EventHandler(this.eTax_Btn_Click);
             // 
-            // Bills_Btn
+            // Transactions_Btn
             // 
-            this.HorizontalTransition.SetDecoration(this.Bills_Btn, BunifuAnimatorNS.DecorationType.None);
-            this.ParticlesTransition.SetDecoration(this.Bills_Btn, BunifuAnimatorNS.DecorationType.None);
-            this.Bills_Btn.FlatAppearance.BorderSize = 0;
-            this.Bills_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.Bills_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bills_Btn.ForeColor = System.Drawing.Color.LimeGreen;
-            this.Bills_Btn.Image = global::BankingSystem.Properties.Resources.bills;
-            this.Bills_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Bills_Btn.Location = new System.Drawing.Point(0, 220);
-            this.Bills_Btn.Name = "Bills_Btn";
-            this.Bills_Btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Bills_Btn.Size = new System.Drawing.Size(230, 80);
-            this.Bills_Btn.TabIndex = 7;
-            this.Bills_Btn.Text = "   Bills";
-            this.Bills_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Bills_Btn.UseVisualStyleBackColor = true;
-            this.Bills_Btn.Click += new System.EventHandler(this.Bills_Btn_Click);
+            this.HorizontalTransition.SetDecoration(this.Transactions_Btn, BunifuAnimatorNS.DecorationType.None);
+            this.ParticlesTransition.SetDecoration(this.Transactions_Btn, BunifuAnimatorNS.DecorationType.None);
+            this.Transactions_Btn.FlatAppearance.BorderSize = 0;
+            this.Transactions_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Transactions_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Transactions_Btn.ForeColor = System.Drawing.Color.LimeGreen;
+            this.Transactions_Btn.Image = global::BankingSystem.Properties.Resources.bills;
+            this.Transactions_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Transactions_Btn.Location = new System.Drawing.Point(0, 220);
+            this.Transactions_Btn.Name = "Transactions_Btn";
+            this.Transactions_Btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Transactions_Btn.Size = new System.Drawing.Size(230, 80);
+            this.Transactions_Btn.TabIndex = 7;
+            this.Transactions_Btn.Text = "   Transaction History";
+            this.Transactions_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Transactions_Btn.UseVisualStyleBackColor = true;
+            this.Transactions_Btn.Click += new System.EventHandler(this.Transactions_Btn_Click);
             // 
             // Payments_Btn
             // 
@@ -219,9 +219,9 @@
             this.Account_Btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Account_Btn.Size = new System.Drawing.Size(230, 80);
             this.Account_Btn.TabIndex = 5;
-            this.Account_Btn.Text = "   AccountSummary";
+            this.Account_Btn.Text = "   Account Summary";
             this.Account_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Account_Btn.UseVisualStyleBackColor = false;
+            this.Account_Btn.UseVisualStyleBackColor = true;
             this.Account_Btn.Click += new System.EventHandler(this.Account_Btn_Click);
             // 
             // Menu_Btn
@@ -259,47 +259,47 @@
             // 
             this.HorizontalTransition.AnimationType = BunifuAnimatorNS.AnimationType.HorizBlind;
             this.HorizontalTransition.Cursor = null;
-            animation10.AnimateOnlyDifferences = true;
-            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
-            animation10.LeafCoeff = 0F;
-            animation10.MaxTime = 1F;
-            animation10.MinTime = 0F;
-            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
-            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
-            animation10.MosaicSize = 0;
-            animation10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation10.RotateCoeff = 0F;
-            animation10.RotateLimit = 0F;
-            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
-            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
-            animation10.TimeCoeff = 0F;
-            animation10.TransparencyCoeff = 0F;
-            this.HorizontalTransition.DefaultAnimation = animation10;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.HorizontalTransition.DefaultAnimation = animation2;
             // 
             // ParticlesTransition
             // 
             this.ParticlesTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.ParticlesTransition.Cursor = null;
-            animation9.AnimateOnlyDifferences = true;
-            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
-            animation9.LeafCoeff = 0F;
-            animation9.MaxTime = 1F;
-            animation9.MinTime = 0F;
-            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
-            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
-            animation9.MosaicSize = 1;
-            animation9.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation9.RotateCoeff = 0F;
-            animation9.RotateLimit = 0F;
-            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
-            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
-            animation9.TimeCoeff = 2F;
-            animation9.TransparencyCoeff = 0F;
-            this.ParticlesTransition.DefaultAnimation = animation9;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.ParticlesTransition.DefaultAnimation = animation1;
             // 
             // GeneralForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
@@ -329,7 +329,7 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel NavigationPanel;
         private System.Windows.Forms.Button eTax_Btn;
-        private System.Windows.Forms.Button Bills_Btn;
+        private System.Windows.Forms.Button Transactions_Btn;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button Logout_Btn;
         private System.Windows.Forms.Button Menu_Btn;

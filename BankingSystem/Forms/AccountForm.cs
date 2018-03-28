@@ -11,10 +11,17 @@ namespace BankingSystem
 {
     public partial class AccountForm : Form
     {
-        public AccountForm(Account account_data)
+        Account account_data;
+        public AccountForm(string acc_no)
         {
             InitializeComponent();
-            this.TopLevel = false;
+            TopLevel = false;
+            account_data = new Account(acc_no);
+            UpdateData();
+        }
+
+        public void UpdateData()
+        {
             account_data.Retrieve_Data();
             Account_NoLabel.Text = account_data.Get_Account_No().ToString();
             Account_TypeLabel.Text = account_data.Get_Account_Type();

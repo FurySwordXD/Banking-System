@@ -14,30 +14,35 @@ namespace BankingSystem
         private LoginForm loginform;
         private AccountForm accountform;
         private TransferForm transferform;
-        public Account account_data;
+        private TransactionsForm transactionsform;
 
         public GeneralForm(LoginForm loginform, string acc_no)
         {
             InitializeComponent();
-            account_data = new Account(acc_no);
             this.loginform = loginform;
 
-            accountform = new AccountForm(account_data);
-            transferform = new TransferForm(account_data);
+            accountform = new AccountForm(acc_no);
+            transferform = new TransferForm(acc_no);
+            transactionsform = new TransactionsForm(acc_no);
 
             MainPanel.Controls.Add(accountform);
             accountform.Show();
             accountform.Dock = DockStyle.Fill;
+            Account_Btn.BackColor = Color.FromArgb(35, 35, 35);
 
             MainPanel.Controls.Add(transferform);
             transferform.Hide();
             transferform.Dock = DockStyle.Fill;
+
+            MainPanel.Controls.Add(transactionsform);
+            transactionsform.Hide();
+            transactionsform.Dock = DockStyle.Fill;
         }
 
         private void LogOut()
         {
-            this.Close();
             loginform.Show();
+            Close();
         }
 
 
@@ -65,9 +70,10 @@ namespace BankingSystem
         }
         private void ClearSelectedButtons()
         {
-            Account_Btn.BackColor = Payments_Btn.BackColor = Bills_Btn.BackColor = eTax_Btn.BackColor = Color.FromArgb(20, 20, 20);
+            Account_Btn.BackColor = Payments_Btn.BackColor = Transactions_Btn.BackColor = eTax_Btn.BackColor = Color.FromArgb(20, 20, 20);
             accountform.Hide();
             transferform.Hide();
+            transactionsform.Hide();
         }
 
         private void Account_Btn_Click(object sender, EventArgs e)
@@ -75,6 +81,7 @@ namespace BankingSystem
             ClearSelectedButtons();
             Account_Btn.BackColor = Color.FromArgb(35, 35, 35);
             accountform.Show();
+            accountform.UpdateData();
         }
 
         private void Payments_Btn_Click(object sender, EventArgs e)
@@ -84,10 +91,12 @@ namespace BankingSystem
             transferform.Show();
         }
 
-        private void Bills_Btn_Click(object sender, EventArgs e)
+        private void Transactions_Btn_Click(object sender, EventArgs e)
         {
             ClearSelectedButtons();
-            Bills_Btn.BackColor = Color.FromArgb(35, 35, 35);
+            Transactions_Btn.BackColor = Color.FromArgb(35, 35, 35);
+            transactionsform.UpdateData();
+            transactionsform.Show();
         }
 
         private void eTax_Btn_Click(object sender, EventArgs e)
@@ -95,5 +104,6 @@ namespace BankingSystem
             ClearSelectedButtons();
             eTax_Btn.BackColor = Color.FromArgb(35, 35, 35);
         }
+
     }
 }

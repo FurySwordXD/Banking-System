@@ -20,6 +20,18 @@ namespace BankingSystem
             InitializeComponent();
         }
 
+        public string EncryptDecrypt(string text)
+        {
+            string key = "X";
+
+            var result = new StringBuilder();
+
+            for (int c = 0; c < text.Length; c++)
+                result.Append((char)((uint)text[c] ^ (uint)key[c % key.Length]));
+
+            return result.ToString();
+        }
+
         private void Password_Textbox_OnValueChanged(object sender, EventArgs e)
         {
             password = Password_Textbox.Text;
@@ -48,13 +60,13 @@ namespace BankingSystem
             {
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\VisualStudio\C#\Banking-System\BankingSystem\BankingDatabase.mdf;Integrated Security=True");
                 con.Open();
-                SqlDataAdapter sql_data_adapter = new SqlDataAdapter("Select Count(*) from AuthenticationTable where UserID = '" + userid + "' and Password = '" + password + "'", con);
+                SqlDataAdapter sql_data_adapter = new SqlDataAdapter("Select Count(*) from AuthenticationTable where UserID = '" + userid + "' and Password = '" + EncryptDecrypt(password) + "'", con);
                 DataTable dt = new DataTable();
                 sql_data_adapter.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
-                    //MessageBox.Show("Logging in...");
-                    SqlCommand cmd = new SqlCommand("SELECT * from AuthenticationTable where UserID = '" + userid + "' and Password = '" + password + "'", con);
+                    MessageBox.Show("Logging in...");
+                    SqlCommand cmd = new SqlCommand("SELECT * from AuthenticationTable where UserID = '" + userid + "'", con);
                     SqlDataReader reader = cmd.ExecuteReader();
                     UserID_Textbox.Text = Password_Textbox.Text = userid = password = "";
                     while(reader.Read())
@@ -76,7 +88,7 @@ namespace BankingSystem
         {
             GeneralForm form = new GeneralForm(this, acc_no);
             form.Show();
-            this.Hide();
+            Hide();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

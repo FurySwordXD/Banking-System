@@ -53,6 +53,8 @@
             this.Name_Textbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label6 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.AccountType_DropDown = new Bunifu.Framework.UI.BunifuDropdown();
             this.HeaderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +70,7 @@
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(700, 45);
+            this.HeaderPanel.Size = new System.Drawing.Size(900, 45);
             this.HeaderPanel.TabIndex = 0;
             // 
             // Exit_Btn
@@ -77,7 +79,7 @@
             this.Exit_Btn.FlatAppearance.BorderSize = 0;
             this.Exit_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit_Btn.ForeColor = System.Drawing.Color.LimeGreen;
-            this.Exit_Btn.Location = new System.Drawing.Point(659, 0);
+            this.Exit_Btn.Location = new System.Drawing.Point(859, 0);
             this.Exit_Btn.Name = "Exit_Btn";
             this.Exit_Btn.Size = new System.Drawing.Size(41, 45);
             this.Exit_Btn.TabIndex = 9;
@@ -91,7 +93,7 @@
             this.TitleLabel.ForeColor = System.Drawing.Color.LimeGreen;
             this.TitleLabel.Location = new System.Drawing.Point(0, 0);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(700, 45);
+            this.TitleLabel.Size = new System.Drawing.Size(900, 45);
             this.TitleLabel.TabIndex = 10;
             this.TitleLabel.Text = "Banking System";
             this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -252,7 +254,7 @@
             // bunifuCircleProgressbar1
             // 
             this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
+            this.bunifuCircleProgressbar1.animationIterval = 100;
             this.bunifuCircleProgressbar1.animationSpeed = 300;
             this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
@@ -261,7 +263,7 @@
             this.bunifuCircleProgressbar1.LabelVisible = true;
             this.bunifuCircleProgressbar1.LineProgressThickness = 8;
             this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(471, 136);
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(572, 140);
             this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.bunifuCircleProgressbar1.MaxValue = 100;
             this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
@@ -278,7 +280,7 @@
             this.Checkbox.Checked = false;
             this.Checkbox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.Checkbox.ForeColor = System.Drawing.Color.White;
-            this.Checkbox.Location = new System.Drawing.Point(34, 453);
+            this.Checkbox.Location = new System.Drawing.Point(171, 467);
             this.Checkbox.Margin = new System.Windows.Forms.Padding(6);
             this.Checkbox.Name = "Checkbox";
             this.Checkbox.Size = new System.Drawing.Size(20, 20);
@@ -287,7 +289,7 @@
             // label5
             // 
             this.label5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label5.Location = new System.Drawing.Point(63, 443);
+            this.label5.Location = new System.Drawing.Point(200, 457);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(499, 30);
             this.label5.TabIndex = 26;
@@ -300,7 +302,7 @@
             this.SignUp_Btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.SignUp_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignUp_Btn.ForeColor = System.Drawing.Color.LimeGreen;
-            this.SignUp_Btn.Location = new System.Drawing.Point(300, 490);
+            this.SignUp_Btn.Location = new System.Drawing.Point(400, 500);
             this.SignUp_Btn.Name = "SignUp_Btn";
             this.SignUp_Btn.Size = new System.Drawing.Size(100, 40);
             this.SignUp_Btn.TabIndex = 27;
@@ -342,12 +344,40 @@
             this.bunifuDragControl1.TargetControl = this.TitleLabel;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(467, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(200, 25);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Account Type";
+            // 
+            // AccountType_DropDown
+            // 
+            this.AccountType_DropDown.BackColor = System.Drawing.Color.Transparent;
+            this.AccountType_DropDown.BorderRadius = 0;
+            this.AccountType_DropDown.DisabledColor = System.Drawing.Color.Gray;
+            this.AccountType_DropDown.ForeColor = System.Drawing.Color.White;
+            this.AccountType_DropDown.Items = new string[] {
+        "Savings",
+        "Current"};
+            this.AccountType_DropDown.Location = new System.Drawing.Point(629, 76);
+            this.AccountType_DropDown.Margin = new System.Windows.Forms.Padding(0);
+            this.AccountType_DropDown.Name = "AccountType_DropDown";
+            this.AccountType_DropDown.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.AccountType_DropDown.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.AccountType_DropDown.selectedIndex = 0;
+            this.AccountType_DropDown.Size = new System.Drawing.Size(197, 33);
+            this.AccountType_DropDown.TabIndex = 31;
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(700, 550);
+            this.ClientSize = new System.Drawing.Size(900, 550);
+            this.Controls.Add(this.AccountType_DropDown);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.Name_Textbox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.SignUp_Btn);
@@ -403,5 +433,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox Name_Textbox;
         private System.Windows.Forms.Label label6;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuDropdown AccountType_DropDown;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -7,18 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace BankingSystem
 {
     public partial class SignUpForm : Form
     {
-        private string userid = "" , password = "", account_no = "", name = "", email = "";
+        private string userid = "" , password = "", account_no = "", account_type = "", name = "", email = "";
 
         private LoginForm loginForm;
         public SignUpForm(LoginForm loginform)
         {
             InitializeComponent();
             this.loginForm = loginform;
+        }
+
+
+        public string EncryptDecrypt(string text)
+        {
+            string key = "X";
+
+            var result = new StringBuilder();
+
+            for (int c = 0; c < text.Length; c++)
+                result.Append((char)((uint)text[c] ^ (uint)key[c % key.Length]));
+
+            return result.ToString();
         }
 
         private bool Input_IsValid()
@@ -37,6 +52,7 @@ namespace BankingSystem
             if(AccountNumber_Textbox.Text != "" && UserID_Textbox.Text != "" && Password_Textbox.Text != "" && RePassword_Textbox.Text != "" && Email_Textbox.Text != "" && Name_Textbox.Text != "" && Checkbox.Checked == true)
             {
                 account_no = AccountNumber_Textbox.Text;
+                account_type = AccountType_DropDown.selectedValue;
                 userid = UserID_Textbox.Text;
                 password = Password_Textbox.Text;
                 name = Name_Textbox.Text;
@@ -68,14 +84,20 @@ namespace BankingSystem
                 }
                 else
                 {
-                    string c = "INSERT into AuthenticationTable(UserID,Password,Account_No) VALUES('" + userid + "','" + password + "','" + account_no +"')";
+                    string c = "INSERT into AuthenticationTable(UserID,Password,Account_No) VALUES('" + userid + "','" + EncryptDecrypt(password) + "','" + account_no +"')";
                     SqlCommand cmd = new SqlCommand(c, con);
                     cmd.ExecuteNonQuery();
-                    c = "INSERT into AccountTable(Account_No,Name,Email) VALUES('" + account_no + "','" + name + "','" + email + "')";
+                    c = "INSERT into AccountTable(Account_No,Account_Type,Name,Email) VALUES('" + account_no + "','" + name + "','" + name + "','" + email + "')";
                     cmd = new SqlCommand(c, con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Account created successfully!");
                     loginForm.Show();
+                    for (int i = 0; i <= 100; i++)
+                    {
+                        bunifuCircleProgressbar1.Value = i;
+                        Application.DoEvents();
+                        Thread.Sleep(10);
+                    }
                     con.Close();
                     Close();
                 }
@@ -83,6 +105,7 @@ namespace BankingSystem
             }
             else
             {
+
                 MessageBox.Show("Please fill in all details!");
             }
         }

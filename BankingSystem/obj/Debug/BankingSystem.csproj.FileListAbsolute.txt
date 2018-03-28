@@ -30,3 +30,5 @@ D:\Programming\VisualStudio\C#\Banking-System\BankingSystem\obj\Debug\BankingSys
 D:\Programming\VisualStudio\C#\Banking-System\BankingSystem\obj\Debug\BankingSystem.pdb
 D:\Programming\VisualStudio\C#\Banking-System\BankingSystem\obj\Debug\BankingSystem.SignUpForm.resources
 D:\Programming\VisualStudio\C#\Banking-System\BankingSystem\obj\Debug\BankingSystem.TransferForm.resources
+D:\Programming\VisualStudio\C#\Banking-System\BankingSystem\obj\Debug\BankingSystem.TranscationSlotForm.resources
+D:\Programming\VisualStudio\C#\Banking-System\BankingSystem\obj\Debug\BankingSystem.TransactionsForm.resources
