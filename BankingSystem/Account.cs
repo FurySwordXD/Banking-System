@@ -50,7 +50,7 @@ namespace BankingSystem
         public float Get_Credit() { return credit; }
         public float Get_Debit() { return debit; }
 
-        private void AddTransaction(float amount, string sender_no = null, string reciever_no = null)
+        private void AddTransaction(float amount, string sender_no, string reciever_no)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\VisualStudio\C#\Banking-System\BankingSystem\BankingDatabase.mdf;Integrated Security=True");
             con.Open();
@@ -59,12 +59,13 @@ namespace BankingSystem
             SqlDataReader reader;
 
             int id = 0;
-            cmd.CommandText = "SELECT TOP 1 * FROM TransactionsTable ORDER BY Transaction_Id DESC ";
+            cmd.CommandText = "SELECT TOP 1 * FROM TransactionsTable ORDER BY Transaction_Id DESC";
             reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
                 reader.Read();
                 id = Convert.ToInt32(reader["Transaction_Id"].ToString()) + 1;
+                Console.WriteLine("id: " + id);
             }
             reader.Close();
 
@@ -121,7 +122,6 @@ namespace BankingSystem
             {
                 if (amount <= credit)
                 {
-
                     credit = credit - amount;
 
                     cmd.CommandText = "UPDATE AccountTable SET Credit = '" + credit + "' where Account_No = '" + account_no + "'";
@@ -136,7 +136,6 @@ namespace BankingSystem
 
                     cmd.CommandText = "UPDATE AccountTable SET Credit = '" + (reciever_credit + amount) + "' where Account_No = '" + acc_no + "'";
                     cmd.ExecuteNonQuery();
-
                     AddTransaction(amount, account_no, acc_no);
                     
                     con.Close();

@@ -13,11 +13,16 @@ namespace BankingSystem
     public partial class TransferForm : Form
     {
         private Account account_data;
+        private BlockChain blockchain;
+
         public TransferForm(string acc_no)
         {
             InitializeComponent();
             TopLevel = false;
             account_data = new Account(acc_no);
+            blockchain = new BlockChain();
+            if (!blockchain.ReadData())
+                MessageBox.Show("Warning!\nVulnerability Detected!");
         }
 
         private void Pay_Btn_Click(object sender, EventArgs e)
@@ -25,6 +30,7 @@ namespace BankingSystem
             account_data.Retrieve_Data();
             if (account_data.Pay(Receiver_No_Textbox.Text, Convert.ToSingle(Amount_TextBox.Text)))
             {
+                blockchain.AddBlock();
                 MessageBox.Show("Transfer Successful!");
             }
             else
@@ -35,7 +41,10 @@ namespace BankingSystem
         {
             account_data.Retrieve_Data();
             if (account_data.AddFunds(Convert.ToSingle(DepoistAmount_TextBox.Text)))
+            {
+                blockchain.AddBlock();
                 MessageBox.Show("Added Funds Succesfully!");
+            }
             else
                 MessageBox.Show("Could not add funds...");
         }
@@ -44,7 +53,10 @@ namespace BankingSystem
         {
             account_data.Retrieve_Data();
             if (account_data.WithdrawFunds(Convert.ToSingle(WithdrawAmount_TextBox.Text)))
+            {
+                blockchain.AddBlock();
                 MessageBox.Show("Withdrew Funds Succesfully!");
+            }
             else
                 MessageBox.Show("Insufficient funds... ");
         }

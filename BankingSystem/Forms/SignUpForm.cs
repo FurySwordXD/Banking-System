@@ -47,6 +47,15 @@ namespace BankingSystem
             Close();
         }
 
+        private void Animate()
+        {
+            for (int i = 0; i <= 100; i++)
+            {
+                bunifuCircleProgressbar1.Value = i;
+                Application.DoEvents();
+                Thread.Sleep(10);
+            }
+        }
         private void SignUp_Btn_Click(object sender, EventArgs e)
         {
             if(AccountNumber_Textbox.Text != "" && UserID_Textbox.Text != "" && Password_Textbox.Text != "" && RePassword_Textbox.Text != "" && Email_Textbox.Text != "" && Name_Textbox.Text != "" && Checkbox.Checked == true)
@@ -90,14 +99,9 @@ namespace BankingSystem
                     c = "INSERT into AccountTable(Account_No,Account_Type,Name,Email) VALUES('" + account_no + "','" + name + "','" + name + "','" + email + "')";
                     cmd = new SqlCommand(c, con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Account created successfully!");
                     loginForm.Show();
-                    for (int i = 0; i <= 100; i++)
-                    {
-                        bunifuCircleProgressbar1.Value = i;
-                        Application.DoEvents();
-                        Thread.Sleep(10);
-                    }
+                    Animate();
+                    MessageBox.Show("Account created successfully!");
                     con.Close();
                     Close();
                 }

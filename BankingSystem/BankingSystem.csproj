@@ -71,6 +71,7 @@
     <Compile Include="Forms\AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BlockChain.cs" />
     <Compile Include="Forms\TranscationSlotForm.cs">
       <SubType>Form</SubType>
     </Compile>
